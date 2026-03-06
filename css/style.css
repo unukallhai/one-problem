@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'PaluiSPDemo-Bold';
+    src: url("fonts/PaluiSPDemo-Bold.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Eitai'; 
+    src: url("fonts/Eitai.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (max-width: 480px) {
+    .tab-button {
+        font-size: 8.5px;
+    }
+}
+
+@media (min-width: 480px) {
+    .tab-button {
+        font-size: 12px;
+    }
+}
+
+
+body {
+    font-family: "Eitai";
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    padding-top: 100px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #000000;
+    z-index: 1;
+}
+
+.logo {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.header-devider {
+    background-color: #eee;
+    padding: 1px;
+}
+
+
+.tabs {
+    display: inline-block;
+    gap: 5px;
+}
+
+.tab-button {
+    padding: 10px 10px;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    /* font-size: 2.5vw; */
+    font-family: 'PaluiSPDemo-Bold';
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.tab-button:hover {
+    color: #05cefe;
+}
+
+.tab-button.active {
+    color: #05cefe;
+}
+
+.content {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* ABOUT ---------------------------------------------------------------------------------- */
+.about {
+    text-align: justify;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #ffffff;
+    margin: 30px;
+}
+
+.about-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #05cefe;
+    margin-bottom: 10px;
+}
+
+.about-text {
+    white-space: pre-line;
+    margin-bottom: 50px;
+}
+
+/* ALBUM ----------------------------------------------------------------------------------------- */
+
+.music-contents {
+    display: inline-block;
+    margin: 30px;
+}
+
+
+.album-card {
+    width: 100%;
+    display: flex;
+    color: #ffffff;
+    border: 1px solid #05cefe;
+    box-shadow: 3px 3px 10px #05cefe;
+    margin-bottom: 50px;
+}
+
+.album-image {
+    height: 120px;
+}
+
+.album-cover {
+    margin: 10px;
+}
+
+
+.album-info {
+    text-align: left;
+    margin: 10px;
+}
+
+
+.album-title {
+    font-weight: bold;
+    color: #05cefe;
+    font-size: 12pt;
+}
+
+.album-year, .album-type{
+    font-size: 8pt;
+}
+
+
+/* NEWS ------------------------------------------------------------------------- */
+
+.news-contents {
+    display: inline-block;
+    margin: 30px;
+}
+
+@media (min-width: 480px) {
+    .news-contents {
+        max-width: 50%;
+    }
+}
+
+.news-card {
+    width: 100%;
+    color: #ffffff;
+    border: 1px solid #05cefe;
+    box-shadow: 3px 3px 10px #05cefe;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.news-card-archieve {
+    width: 100%;
+    color: #ffffff;
+    border: 1px solid #05cefe;
+    box-shadow: 3px 3px 10px #05cefe;
+    margin-bottom: 50px;
+    text-align: left;
+    opacity: 30%;
+}
+
+.news {
+    margin: 10pt;
+}
+
+.news-title {
+    font-weight: bold;
+    color: #05cefe;
+    font-size: 12pt;
+    margin-bottom: 20pt;
+}
+
+.news-date {
+    font-size: 8pt;
+    color: #b0b0b0;
+    margin-bottom: 1%;
+}
+
+.news-text {
+    white-space: pre-line; 
+    font-size: 10pt;
+}
+
+
+
+
+
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}

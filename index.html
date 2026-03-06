@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Problem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/logo.png" height="50" alt="logo">
+        </div>
+        <!-- Вкладки -->
+        <div class="header-tabs">
+            <div class="header-devider"></div>
+            <div class="tabs-container">
+                <div class="tabs" data-bind="foreach: tabs">
+                    <button class="tab-button" data-bind="text: name, 
+                    click: $parent.selectTab,
+                    css: { active: $parent.currentTab() === $index() }">
+                    </button>
+                </div>
+            </div>
+            <div class="header-devider"></div>
+        </div>
+    </div>
+
+    <div class="content" data-bind="visible: currentTab() == 0">
+        <img src="images/band.png" alt="band photo" width="100%">
+        <div class="about">
+            <div class="about-title">Почему ONE problem?</div>
+            <div class="about-text">Название для группы выбиралось долго. Было множество разных вариантов, все не подходили. Как-то в обсуждении наших творческих планов, мы с ударником устроили мозговой штурм, предлагая рандомные несложные слова, и проверяя, нет ли уже групп с таким никнеймом на стримингах. Только группы "ONE problem" не существовало, а ведь в названии и заключалась наша единственная проблема. Одна проблема - вот и решение. Так и оставили. А наша бас-гитаристка и дизайнер логотипа Руслана слово problem зачеркнула, оставив слово ONE и в нём скромный намёк. Проблем больше нет, мы - number one.</div>
+        </div>
+    </div>
+
+    <div class="content" data-bind="visible: currentTab() == 1">
+        <div class="music-contents" data-bind="foreach: music">
+            <a class="album-card">
+                <div class="album-cover">
+                    <img data-bind="attr: { src: albumCover, alt: albumTitle }" class="album-image">
+                </div>
+                <div class="album-info">
+                    <div class="album-title"        data-bind="text: albumTitle"></div>
+                    <span class="album-year"         data-bind="text: albumYear"></span>
+                    <span class="album-type">·</span>
+                    <span class="album-type"         data-bind="text: albumType"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="content" data-bind="visible: currentTab() == 2">
+        <div class="news-contents" data-bind="foreach: news">
+            <div class="news-card" data-bind="visible: newsArchive">
+                <div class="news">
+                    <div class="news-date"  data-bind="text: newsDate"></div>
+                    <div class="news-title" data-bind="text: newsTitle"></div>
+                    <div class="news-text"  data-bind="text: newsText"></div>
+                </div>
+            </div>
+        </div>
+        <div style="opacity: 30%; letter-spacing: 20px; margin-bottom: -10px;">АРХИВ</div>
+        <div class="news-contents" data-bind="foreach: news">
+            <div class="news-card-archieve" data-bind="visible: !newsArchive">
+                <div class="news">
+                    <div class="news-date"  data-bind="text: newsDate"></div>
+                    <div class="news-title" data-bind="text: newsTitle"></div>
+                    <div class="news-text"  data-bind="text: newsText"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" data-bind="visible: currentTab() == 3">
+        <div data-bind="foreach: conserts">
+            <div class="consert">
+                <div class="consert-title"       data-bind="text: consertTitle"></div>
+                <div class="consert-description" data-bind="text: consertDescription"></div>
+                <div class="consert-date"        data-bind="text: consertDate"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Текущая вкладка: <span data-bind="text: currentTabName"></span></p>
+        <p>2026 год</p>
+    </div>
+
+    <!-- Подключаем Knockout -->
+    <script src="js/knockout-3.5.1.js"></script>
+    <!-- Подключаем наш код -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
