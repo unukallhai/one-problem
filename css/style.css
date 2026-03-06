@@ -83,6 +83,11 @@ body {
 }
 
 /* ABOUT ---------------------------------------------------------------------------------- */
+
+.about-container {
+    display: inline-block;
+}
+
 .about {
     text-align: justify;
     font-size: 13px;
@@ -100,7 +105,34 @@ body {
 
 .about-text {
     white-space: pre-line;
-    margin-bottom: 50px;
+}
+
+.social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-item {
+    margin-bottom: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.social-link:hover {
+    color: #05cefe;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px; 
+    object-fit: contain;
 }
 
 /* ALBUM ----------------------------------------------------------------------------------------- */
@@ -122,6 +154,7 @@ body {
 
 .album-image {
     height: 120px;
+    object-fit: contain;
 }
 
 .album-cover {
@@ -209,5 +242,5 @@ body {
     margin-top: 20px;
     text-align: center;
     color: #666;
-    font-size: 14px;
+    font-size: 10px;
 }

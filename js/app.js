@@ -35,7 +35,7 @@ function ViewModel() {
         { name: "Концерты" }
     ];
 
-    self.currentTab = ko.observable(2);
+    self.currentTab = ko.observable(0);
 
     // Контент для каждой вкладки
     
