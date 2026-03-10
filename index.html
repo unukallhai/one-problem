@@ -9,139 +9,129 @@
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <img class="logo" src="images/logo.jpg" height="50" alt="logo">
         <!-- Вкладки -->
         <div class="header-devider"></div>
-        <div class="tabs" data-bind="foreach: tabs">
+        <nav class="tabs" data-bind="foreach: tabs">
             <a href="#" class="tab-button tab-text link-theme" data-bind="text: name, 
             click: $parent.selectTab,
             css:  { active: $parent.currentTab() === $index() },
             attr: { tabindex: tabindex }"></a>
-        </div>
+        </nav>
         <div class="header-devider"></div>
-    </div>
-
-    <div class="content content-style" data-bind="visible: currentTab() == 0">
-        <div class="band-photo">
-            <img src="images/band.png" alt="band photo" width="100%">
-        </div>
-        <div class="about-container">
-            <div class="about">
-                <div class="about-title title-theme">Почему ONE problem?</div>
-                <div class="about-text">Название для группы выбиралось долго. Было множество разных вариантов, все не
-                    подходили. Как-то в обсуждении наших творческих планов, мы с ударником устроили мозговой штурм,
-                    предлагая рандомные несложные слова, и проверяя, нет ли уже групп с таким никнеймом на стримингах.
-                    Только группы "ONE problem" не существовало, а ведь в названии и заключалась наша единственная
-                    проблема. Одна проблема - вот и решение. Так и оставили. А наша бас-гитаристка и дизайнер логотипа
-                    Руслана слово problem зачеркнула, оставив слово ONE и в нём скромный намёк. Проблем больше нет, мы -
-                    number one.</div>
+    </header>
+    <main>
+        <div class="content content-style" data-bind="visible: currentTab() == 0">
+            <div class="band-photo">
+                <img src="images/band.png" alt="band photo" width="100%">
             </div>
-            <div class="about">
-                <div class="about-title title-theme">Мы в СоцСетях!</div>
-                <div class="social-list" data-bind="foreach: social">
-                    <div class="social-item">
-                        <img class="social-icon" data-bind="attr: { src: socialIcon, alt: socialName }">
-                        <a class="social-name main-text-theme link-theme"
-                            data-bind="attr: { href: socialLink}, text: socialName "></a>
+            <div class="about-container">
+                <div class="about">
+                    <div class="about-title title-theme">Почему ONE problem?</div>
+                    <div class="about-text">Название для группы выбиралось долго. Было множество разных вариантов, все не
+                        подходили. Как-то в обсуждении наших творческих планов, мы с ударником устроили мозговой штурм,
+                        предлагая рандомные несложные слова, и проверяя, нет ли уже групп с таким никнеймом на стримингах.
+                        Только группы "ONE problem" не существовало, а ведь в названии и заключалась наша единственная
+                        проблема. Одна проблема - вот и решение. Так и оставили. А наша бас-гитаристка и дизайнер логотипа
+                        Руслана слово problem зачеркнула, оставив слово ONE и в нём скромный намёк. Проблем больше нет, мы -
+                        number one.</div>
+                </div>
+                <div class="about">
+                    <div class="about-title title-theme">Мы в СоцСетях!</div>
+                    <div class="social-list" data-bind="foreach: social">
+                        <div class="social-item">
+                            <img class="social-icon" data-bind="attr: { src: socialIcon, alt: socialName }">
+                            <a class="social-name main-text-theme link-theme"
+                                data-bind="attr: { href: socialLink}, text: socialName "></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="content content-style" data-bind="visible: currentTab() == 1">
-        <div class="music-contents" data-bind="foreach: music">
-            <div class="album-card" data-bind="css: { expanded: showDetails }">
-                <div class="visible-info">
-                    <img class="album-image" data-bind="attr: { src: albumCover, alt: albumTitle }">
-                    <div class="album-info">
-                        <div>
-                            <div class="album-title title-theme" data-bind="text: albumTitle"></div>
-                            <span class="album-year main-text-theme" data-bind="text: albumYear"></span>
-                            <span class="album-type main-text-theme">·</span>
-                            <span class="album-type main-text-theme" data-bind="text: albumType"></span>
+        <div class="content content-style" data-bind="visible: currentTab() == 1">
+            <div class="music-contents" data-bind="foreach: music">
+                <div class="album-card" data-bind="css: { expanded: showDetails }">
+                    <div class="visible-info">
+                        <img class="album-image" data-bind="attr: { src: albumCover, alt: albumTitle }">
+                        <div class="album-info">
+                            <div>
+                                <div class="album-title title-theme" data-bind="text: albumTitle"></div>
+                                <span class="album-year main-text-theme" data-bind="text: albumYear"></span>
+                                <span class="album-type main-text-theme">·</span>
+                                <span class="album-type main-text-theme" data-bind="text: albumType"></span>
+                            </div>
+                            <div class="close-button"
+                                data-bind="if: $parent.isMobile(), click: $parent.toggleAlbumDetails;">
+                                <span class="main-text-theme">Слушать</span>
+                                <svg width="20" height="20" viewBox="0 0 25 25" fill="currentColor" stroke="currentColor"
+                                    data-bind="css: { rotated: showDetails }">
+                                    <path d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!-- <div>
+                                <a class="album-link main-text-theme link-theme" data-bind="attr: { href: albumLink}">Слушать</a>
+                            </div> -->
                         </div>
-                        <div class="close-button" data-bind="if: $parent.isMobile(), click: $parent.toggleAlbumDetails;">
-                            <span class="main-text-theme">Слушать</span>
-                            <svg width="20" height="20" viewBox="0 0 25 25" fill="currentColor" stroke="currentColor" data-bind="css: { rotated: showDetails }">
-                                <path d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"></path>
-                            </svg>
-                        </div>
-                        <!-- <div>
-                            <a class="album-link main-text-theme link-theme" data-bind="attr: { href: albumLink}">Слушать</a>
-                        </div> -->
                     </div>
-                </div>
-                <div  style="width: 100%;" data-bind="if: !$parent.isMobile() || showDetails">
-                    <div class="hidden-info">
-                        <div class="stream-list" data-bind="foreach: albumLinks">
-                            <div class="stream-item">
-                                <img class="stream-icon" data-bind="attr: { src: streamIcon, alt: streamName }">
-                                <a class=" stream-name main-text-theme link-theme"
-                                    data-bind="attr: { href: streamLink}, text: streamName"></a>
+                    <div style="width: 100%;" data-bind="if: !$parent.isMobile() || showDetails">
+                        <div class="hidden-info">
+                            <div class="stream-list" data-bind="foreach: albumLinks">
+                                <div class="stream-item">
+                                    <img class="stream-icon" data-bind="attr: { src: streamIcon, alt: streamName }">
+                                    <a class=" stream-name main-text-theme link-theme"
+                                        data-bind="attr: { href: streamLink}, text: streamName"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="hidden-info-mobile" data-bind="if: $parent.isMobile()&&showDetails">
-                    <div class="stream-list" data-bind="foreach: albumLinks">
-                        <div class="stream-item">
-                            <img class="stream-icon" data-bind="attr: { src: streamIcon, alt: streamName }"">
-                            <a class=" stream-name main-text-theme link-theme"
-                                data-bind="attr: { href: streamLink}, text: streamName"></a>
-                        </div>
+            </div>
+        </div>
+
+        <div class="content content-style" data-bind="visible: currentTab() == 2">
+            <div class="news-contents" data-bind="foreach: news">
+                <div class="news-card" data-bind="visible: !newsArchive, css: { archive: newsArchive }">
+                    <!-- <div class="news-card" data-bind="visible: newsArchive"> -->
+                    <div class="news">
+                        <div class="news-date" data-bind="text: newsDate"></div>
+                        <div class="news-title title-theme" data-bind="text: newsTitle"></div>
+                        <div class="news-text" data-bind="text: newsText"></div>
                     </div>
-                </div> -->
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="content content-style" data-bind="visible: currentTab() == 2">
-        <div class="news-contents" data-bind="foreach: news">
-            <div class="news-card" data-bind="visible: newsArchive">
-                <div class="news">
-                    <div class="news-date" data-bind="text: newsDate"></div>
-                    <div class="news-title title-theme" data-bind="text: newsTitle"></div>
-                    <div class="news-text" data-bind="text: newsText"></div>
+            <div style="opacity: 30%; letter-spacing: 20px; margin-bottom: 20px;">АРХИВ</div>
+            <div class="news-contents" data-bind="foreach: news">
+                <div class="news-card" data-bind="visible: newsArchive, css: { archive: newsArchive }">
+                    <div class="news">
+                        <div class="news-date" data-bind="text: newsDate"></div>
+                        <div class="news-title" data-bind="text: newsTitle"></div>
+                        <div class="news-text" data-bind="text: newsText"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div style="opacity: 30%; letter-spacing: 20px; margin-bottom: -10px;">АРХИВ</div>
-        <div class="news-contents" data-bind="foreach: news">
-            <div class="news-card-archieve" data-bind="visible: !newsArchive">
-                <div class="news">
-                    <div class="news-date" data-bind="text: newsDate"></div>
-                    <div class="news-title" data-bind="text: newsTitle"></div>
-                    <div class="news-text" data-bind="text: newsText"></div>
+
+        <div class="content content-style" data-bind="visible: currentTab() == 3">
+            <div data-bind="foreach: conserts">
+                <div class="consert">
+                    <div class="consert-title" data-bind="text: consertTitle"></div>
+                    <div class="consert-description" data-bind="text: consertDescription"></div>
+                    <div class="consert-date" data-bind="text: consertDate"></div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="content content-style" data-bind="visible: currentTab() == 3">
-        <div data-bind="foreach: conserts">
-            <div class="consert">
-                <div class="consert-title" data-bind="text: consertTitle"></div>
-                <div class="consert-description" data-bind="text: consertDescription"></div>
-                <div class="consert-date" data-bind="text: consertDate"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer side-text-theme">
+    <footer class="footer side-text-theme">
         <p>© 2026 год • ONE problem</p>
-    </div>
+    </footer>
 
     <script src="js/knockout-3.5.1.js"></script>
-    
-    <script src="js/models/about.js"></script>
-    <script src="js/models/albumLink.js"></script>
-    <script src="js/models/album.js"></script>
-    <script src="js/models/news.js"></script>
-    <script src="js/models/consert.js"></script>
-    <script src="js/models/social.js"></script>
-    
+
+    <script src="js/data/aboutData.js"></script>
     <script src="js/data/socialData.js"></script>
     <script src="js/data/musicData.js"></script>
     <script src="js/data/newsData.js"></script>

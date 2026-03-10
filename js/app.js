@@ -12,13 +12,9 @@ function ViewModel() {
     self.music    = musicData;
     self.news     = newsData;
     self.conserts = consertsData;
+    self.about    = aboutData;
 
     self.currentTab = ko.observable(0);
-
-    self.currentTabName = ko.computed(function () {
-        return self.tabs[self.currentTab()].name;
-    });
-
 
     self.selectTab = function (tab) {
         var index = self.tabs.indexOf(tab);

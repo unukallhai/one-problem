@@ -21,9 +21,10 @@
 /* THEMES --------------------------------------------------- */
 
 .title-theme {
-    color: #05cefe;
-    font-weight: bold;
     font-family: "Eitai";
+    font-weight: bold;
+    font-size: 12pt;
+    color: #05cefe;
 }
 
 .main-text-theme {
@@ -67,15 +68,15 @@ body {
     text-align: center;
 }
 
+.content-style {
+    font-family: "Eitai";
+    color: #ffffff;
+}
+
 .footer {
     margin-top: 50px;
     text-align: center;
     font-size: 10px;
-}
-
-.content-style {
-    font-family: "Eitai";
-    color: #ffffff;
 }
 
 .header {
@@ -84,7 +85,7 @@ body {
     width: 100%;
     text-align: center;
     background-color: #000000;
-    z-index: 2;
+    z-index: 1;
 }
 
 .logo {
@@ -322,12 +323,17 @@ body {
 
 .news-contents {
     display: inline-block;
-    margin: 30px;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 540px) {
     .news-contents {
-        max-width: 50%;
+        width: 100%;
+    }
+}
+
+@media (min-width: 540px) {
+    .news-contents {
+        width: 480px;
     }
 }
 
@@ -340,13 +346,7 @@ body {
     text-align: left;
 }
 
-.news-card-archieve {
-    width: 100%;
-    color: #ffffff;
-    border: 1px solid #05cefe;
-    box-shadow: 3px 3px 10px #05cefe;
-    margin-bottom: 50px;
-    text-align: left;
+.news-card.archive {
     opacity: 30%;
 }
 
