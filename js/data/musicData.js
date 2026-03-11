@@ -13,8 +13,7 @@ var musicData = [
             { streamName: "Deezer",         streamIcon: "images/icons/deezer.svg",      streamLink: "http://www.deezer.com/album/648203971" },
             { streamName: "iTunes",         streamIcon: "images/icons/itunes.svg",      streamLink: "https://music.apple.com/ru/album/1770294342?app=itunes&mt=1&at=1000lqjf&ct=bq&Is=1&ls=1" },
             { streamName: "Apple Music",    streamIcon: "images/icons/apple-music.svg", streamLink: "https://music.apple.com/ru/album/1770294342?app=music&mt=1&at=1000lqjf&ct=bq&Is=1&ls=1" }
-        ],
-        showDetails: ko.observable(false)
+        ]
     },
 
     {
@@ -31,8 +30,7 @@ var musicData = [
             { streamName: "iTunes",         streamIcon: "images/icons/itunes.svg",      streamLink: "https://music.apple.com/de/album/1718074732?app=itunes&mt=1&at=1000lqjf&ct=bq&Is=1&ls=1"},
             { streamName: "Apple Music",    streamIcon: "images/icons/apple-music.svg", streamLink: "https://music.apple.com/de/album/1718074732?app=music&mt=1&at=1000lqjf&ct=bq&Is=1&ls=1"}
             // new AlbumLink("Deezer", ""),
-        ],
-        showDetails: ko.observable(false)
+        ]
     },
 
     {
@@ -50,7 +48,6 @@ var musicData = [
             { streamName: "iTunes",         streamIcon: "images/icons/itunes.svg",      streamLink: "https://music.apple.com/us/album/1674778258?app=itunes&mt=1&at=1000lqjf&ct=bq&Is=1&ls=1"},
             { streamName: "Apple Music",    streamIcon: "images/icons/apple-music.svg", streamLink: "https://music.apple.com/us/album/1674778258?app=music&mt=1&at=1000lqjf&ct=bq&Is=1&ls=1"}
             // new AlbumLink("VK Музыка",     ""),
-        ],
-        showDetails: ko.observable(false)
+        ]
     }
 ];

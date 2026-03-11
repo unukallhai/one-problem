@@ -23,14 +23,26 @@
 .title-theme {
     font-family: "Eitai";
     font-weight: bold;
-    font-size: 12pt;
+    font-size: 16px;
     color: #05cefe;
+    margin-bottom: 20px;
+}
+
+.title-big {
+    font-size: 18px;
 }
 
 .main-text-theme {
-    color: #ffffff;
     font-family: "Eitai";
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ffffff;
+}
+
+.list-text-theme {
+    font-family: "Eitai";
+    font-size: 14px;
+    color: #ffffff;
 }
 
 .side-text-theme {
@@ -66,9 +78,6 @@ body {
 .content {
     padding: 0px 30px;
     text-align: center;
-}
-
-.content-style {
     font-family: "Eitai";
     color: #ffffff;
 }
@@ -135,20 +144,8 @@ body {
     margin-bottom: 10px;
 }
 
-.about-container {
-    display: inline-block;
-}
-
 .about {
     text-align: justify;
-    font-size: 13px;
-    line-height: 1.7;
-    color: #ffffff;
-}
-
-.about-title {
-    font-size: 18px;
-    margin-bottom: 10px;
 }
 
 .about-text {
@@ -170,12 +167,14 @@ body {
     width: 20px;
     height: 20px; 
     object-fit: contain;
+    align-self: center; 
 }
 
 .social-name {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s;
+    align-self: center; 
 }
 
 /* MUSIC ----------------------------------------------------------------------------------------- */
@@ -230,21 +229,6 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 15px;
-    align-items: center;
-}
-
-.stream-icon {
-    width: 20px;
-    height: 20px; 
-    object-fit: contain;
-    align-self: center; 
-}
-
-.stream-name {
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s;
 }
 
 
@@ -282,7 +266,7 @@ body {
     }
 
     .close-button svg.rotated {
-        transform: rotateX(180deg);
+        transform: rotateX(180deg) translate(0px, -5px);
     }
 }
 

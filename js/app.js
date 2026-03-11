@@ -2,24 +2,13 @@ function ViewModel() {
     var self = this;
 
     self.tabs = [
-        { name: "О нас",    tabindex: 1},
-        { name: "Музыка",   tabindex: 2},
-        { name: "Новости",  tabindex: 3},
-        { name: "Концерты", tabindex: 4}
+        { name: "О нас"},
+        { name: "Музыка"},
+        { name: "Новости"},
+        { name: "Концерты"}
     ];
 
-    self.social   = socialData;
-    self.music    = musicData;
-    self.news     = newsData;
-    self.conserts = consertsData;
-    self.about    = aboutData;
-
-    self.currentTab = ko.observable(0);
-
-    self.selectTab = function (tab) {
-        var index = self.tabs.indexOf(tab);
-        self.currentTab(index);
-    };
+    self.currentTab = ko.observable(self.tabs[0]);
 
     self.isMobile = ko.computed(function() {
         var hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
@@ -27,9 +16,20 @@ function ViewModel() {
         return hasTouch && matchesMedia;
     });
 
+    self.LoadMusicData = function () {
+        musicData.forEach(i => i.showDetails = ko.observable(false));
+        return musicData;
+    };
+
     self.toggleAlbumDetails = function(album) {
         album.showDetails(!album.showDetails());
     };
+
+    self.social   = socialData;
+    self.music    = self.LoadMusicData()
+    self.news     = newsData;
+    self.conserts = consertsData;
+    self.about    = aboutData;
 }
 
-ko.applyBindings(new ViewModel());
+// ko.applyBindings(new ViewModel());
